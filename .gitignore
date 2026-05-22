@@ -1,0 +1,4 @@
+*.class
+/bin/
+/oracleJdk-26/
+/Java/oracleJdk-26/

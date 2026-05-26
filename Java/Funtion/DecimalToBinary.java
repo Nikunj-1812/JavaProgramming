@@ -13,7 +13,7 @@ public class DecimalToBinary {
     return binary;
 }
     public static void main(String[] args) {
-        int n = 10;
+        int n = 50;
         System.out.println(decimalToBinary(n));
     }
 }

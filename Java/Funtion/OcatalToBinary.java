@@ -24,7 +24,7 @@ public class OcatalToBinary {
         return binary;
     }
     public static void main(String[] args) {
-        int n = 17;
+        int n = 21;
         System.out.println(OctalToBinary(n));
     }
 }

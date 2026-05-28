@@ -1,4 +1,5 @@
 package Arrany;
+
 public class Homework {
 
     public static int[] sumArray(int[] arr1, int[] arr2) {
@@ -40,16 +41,15 @@ public class Homework {
             }
         }
         if (size < 2) return -1;
+        
         int[] temp = new int[size];
         int j = 0;
-
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 == 0) {
                 temp[j] = i;
                 j++;
             }
         }
-
         int distance = Integer.MAX_VALUE;
         for (int i = 0; i < size - 1; i++) {
             int currentDistance = temp[i + 1] - temp[i];
@@ -58,6 +58,27 @@ public class Homework {
             }
         }
         return distance;
+    }
+
+    public static int countLessThanX(int[] arr, int x) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] < x) count++; 
+        }
+        return count;
+    }
+
+    public static int subtractDifferentSize(int[] arr1, int[] arr2) {
+        int n1 = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            n1 = n1 * 10 + arr1[i];
+        }
+        int n2 = 0;
+        for (int i = 0; i < arr2.length; i++) {
+            n2 = n2 * 10 + arr2[i];
+        }
+        return n1 - n2;
     }
 
     public static void printArray(int[] arr) {
@@ -83,5 +104,13 @@ public class Homework {
 
         int[] evenArr = {1, 2, 3, 3, 4, 5, 6, 4, 4};
         System.out.println(shortBetweenEven(evenArr));
+
+        int[] lessArr = {1, 5, 2, 7, 3, 9};
+        System.out.println(countLessThanX(lessArr, 5));
+
+        int[] a = {9, 0, 0};
+        int[] b = {1, 0};
+
+        System.out.println(subtractDifferentSize(a, b));
     }
 }

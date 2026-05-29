@@ -2,21 +2,36 @@ package Arrany;
 
 public class Homework {
 
-    public static int[] sumArray(int[] arr1, int[] arr2) {
-        int[] result = new int[arr1.length];
-        for (int i = 0; i < arr1.length; i++) {
-            result[i] = arr1[i] + arr2[i];
-        }
-        return result;
-    }
+public static int[] sumArray(int[] arr1, int[] arr2) {
+    int n = arr1.length;
+    int[] result = new int[n + 1];
+    int carry = 0;
 
-    public static int[] subtractArray(int[] arr1, int[] arr2) {
-        int[] result = new int[arr1.length];
-        for (int i = 0; i < arr1.length; i++) {
-            result[i] = arr1[i] - arr2[i];
-        }
-        return result;
+    for (int i = n - 1; i >= 0; i--) {
+        int sum = arr1[i] + arr2[i] + carry;
+        result[i + 1] = sum % 10;
+        carry = sum / 10;
     }
+    result[0] = carry;
+    return result;
+}
+
+public static int[] subtractArray(int[] arr1, int[] arr2) {
+    int[] result = new int[arr1.length];
+    int borrow = 0;
+    for (int i = arr1.length - 1; i >= 0; i--) {
+        int a = arr1[i] - borrow;
+        int b = arr2[i];
+        if (a < b) {
+            a = a + 10;
+            borrow = 1;
+        } else {
+            borrow = 0;
+        }
+        result[i] = a - b;
+    }
+    return result;
+}
 
     public static int maxDuplicateDistance(int[] arr) {
         int maxDistance = 0;
@@ -90,8 +105,8 @@ public class Homework {
 
     public static void main(String[] args) {
 
-        int[] arr1 = {1, 2, 3, 4};
-        int[] arr2 = {4, 3, 2, 1};
+        int[] arr1 = {1, 2, 3,};
+        int[] arr2 = {1,0,7};
 
         int[] sumResult = sumArray(arr1, arr2);
         printArray(sumResult);

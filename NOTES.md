@@ -1,0 +1,2 @@
+Notion Notes:https://www.notion.so/1-Java-Fundamentals-36330f710309830385cc01b66159c853?source=copy_link
+Problem Sheet:https://docs.google.com/spreadsheets/d/1SgLSwfU5oiy6fsmwtV9gK5Ue0ExzuMVIK3PeDjIqDn8/edit?gid=0#gid=0
